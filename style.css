@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: url(bgfix.jpg);
+  background-size: cover;
+  color: white; 
+  padding-bottom: 50px;
+}
+
+header {
+  background: #002d43;
+  color: #fff;  
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+p {
+  text-align: justify;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  position: relative;
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #ffcc00;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav a:hover {
+  color: #ffcc00;
+  transform: scale(1.05);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+section {
+  max-width: 950px;
+  margin: 30px auto;
+  background: #bebebe;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+section h2 {
+  margin-bottom: 15px;
+  color: #004466;
+}
+
+section p {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0077aa;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #005f88;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.galeri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.galeri img {
+  width: 350px; 
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeri img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.galeri figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+
+.galeri figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.ticket {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.ticket h3 {
+  color: #004466;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.ticket p {
+  margin: 8px 0;
+}
+
+.ticket .price {
+  font-weight: bold;
+  color: #f60;
+  font-size: 1.2rem;
+}

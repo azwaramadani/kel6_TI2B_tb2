@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi Museum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Museum Nasional Indonesia</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="koleksi.html">Koleksi</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="tiket.html">Tiket</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>"Sejarah bukanlah beban ingatan melainkan penerangan jiwa." -John Dalberg-Acton.</h2>
+    
+    <div class="galeri">
+  <figure>
+    <img src="arcakoleksi.png" alt="Arca Hindu-Buddha">
+    <figcaption>Arca dari era Hindu-Buddha Abad ke-8 Masehi</figcaption>
+  </figure>
+
+  <figure>
+    <img src="prasasti-kedukan-bukit.jpg" alt="Prasasti kuno">
+    <figcaption>Prasasti Kedukan Bukit, peninggalan Kerajaan Sriwijaya</figcaption>
+  </figure>
+
+  <figure>
+    <img src="prasejarah.webp" alt="Peralatan tradisional">
+    <figcaption>Fosil Prasejarah</figcaption>
+  </figure>
+
+  <figure>
+    <img src="ilustrasimanusiapurba.webp" alt="Ilustrasi Manusia Prasejarah">
+    <figcaption>Ilustrasi Manusia Prasejarah</figcaption>
+  </figure>
+
+  <figure>
+    <img src="bgfix.jpg" alt="Wahana Imersif">
+    <figcaption>Wahana Imersif Terbaru Museum Nasional Indonesia</figcaption>
+  </figure>
+
+  <figure>
+    <img src="arca nandiswara.jpeg" alt="Arca Nandiswara dari Abad ke-13 Masehi">
+    <figcaption>Arca Nandiswara dari Abad ke-13 Masehi</figcaption>
+  </figure>
+
+  <figure>
+    <img src="peta.jpeg" alt="Peta Bahasa-Bahasa Daerah di Indonesia">
+    <figcaption>Peta Bahasa-Bahasa Daerah di Indonesia</figcaption>
+  </figure>
+</div>
+
+  <button onclick="toggleInfo()">KLIK SAYA</button>
+    <p id="infoTambahan" style="display: none; margin-top: 10px;">
+      Setiap koleksi menceritakan bagian penting dari kisah panjang Indonesia sebagai bangsa besar.
+    </p>
+
+    <script>
+    function toggleInfo() {
+  var info = document.getElementById("infoTambahan");
+  if (info.style.display === "none") {
+    info.style.display = "block";
+  } else {
+    info.style.display = "none";
+  }
+}
+  </script>
+  </section>
+  
+</body>
+</html>

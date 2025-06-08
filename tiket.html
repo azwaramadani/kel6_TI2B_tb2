@@ -1,0 +1,165 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pesan Tiket - TB2 Museum</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>Museum Nasional Indonesia</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="tentang.html">Tentang</a>
+      <a href="koleksi.html">Koleksi</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="tiket.html">Tiket</a>
+    </nav>
+  </header>
+
+  <div id="react-root"></div>
+  <script type="text/babel">
+    function TicketList() {
+      const tickets = [
+        {
+          title: "Regular Entrance Ticket – Indonesian Citizens & KITAS Holders",
+          price: "Rp 25.000"
+        },
+        {
+          title: "\"Kongsi\" Exhibition Ticket – Indonesian Citizens & KITAS Holders",
+          price: "Rp 25.000"
+        },
+        {
+          title: "Immersive Ticket",
+          price: "Rp 35.000"
+        },
+        {
+          title: "\"Kongsi\" Exhibition Ticket – Foreign Tourists",
+          price: "Rp 50.000"
+        },
+        {
+          title: "Regular Entrance Ticket – International Tourists",
+          price: "Rp 50.000"
+        },
+      ];
+
+      return (
+        <div style={{ maxWidth: "600px", margin: "0 auto", padding: "1rem" }}>
+          {tickets.map((ticket, index) => (
+            <TicketCard
+              key={index}
+              title={ticket.title}
+              description={ticket.description}
+              price={ticket.price}
+            />
+          ))}
+          <TicketForm />
+        </div>
+      );
+    }
+    const root = ReactDOM.createRoot(document.getElementById("react-root"));
+    root.render(<TicketList />);
+
+    
+    function TicketCard({ title, description, price }) {
+      return (
+        <div style={{
+          border: "1px solid #ddd",
+          borderRadius: "8px",
+          padding: "16px",
+          marginBottom: "16px",
+          boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+          backgroundColor: "#333333" 
+        }}>
+          <h3 style={{ margin: "0 0 8px 0" }}>{title}</h3>
+          <p style={{ margin: "0 0 8px 0", color: "#555" }}>{description}</p>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span style={{ color: "#f50", fontWeight: "bold", fontSize: "16px" }}>{price}</span>
+          </div>
+        </div>
+      );
+    }
+
+    function TicketForm() {
+    const [name, setName] = React.useState("");
+    const [ticketType, setTicketType] = React.useState("");
+    const [quantity, setQuantity] = React.useState(1);
+
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Terima kasih, ${name}! Anda memesan ${quantity} tiket jenis "${ticketType}".`);
+    setName("");
+    setTicketType("");
+    setQuantity(1);
+    };
+
+    return (
+      <form onSubmit={handleSubmit} style={{
+      backgroundColor: "#333333",
+      padding: "20px",
+      borderRadius: "10px",
+      marginTop: "40px",
+      boxShadow: "0 4px 10px rgba(0,0,0,0.15)"
+      }}>
+        <h3>Form Pemesanan Tiket 🎫</h3>
+
+        <div style={{ marginBottom: "1rem" }}>
+          <label>Nama Pengunjung:</label><br/>
+          <input
+            type="text"
+            value={name}
+            required
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Masukkan nama pemilik tiket."
+            style={{ width: "100%", padding: "8px" }}
+              />
+        </div>
+
+        <div style={{ marginBottom: "1rem" }}>
+          <label>Jenis Tiket:</label><br/>
+          <input
+            type="text"
+            value={ticketType}
+            required
+            onChange={(e) => setTicketType(e.target.value)}
+            placeholder="Tulis jenis tiket berdasarkan list diatas."
+            style={{ width: "100%", padding: "8px" }}
+          />
+        </div>
+
+        <div style={{ marginBottom: "1rem" }}>
+          <label>Jumlah Tiket:</label><br/>
+          <input
+            type="number"
+            value={quantity}
+            required
+            min="1"
+            onChange={(e) => setQuantity(e.target.value)}
+            style={{ width: "100%", padding: "8px" }}
+          />
+        </div>
+
+        <button type="submit" style={{
+          backgroundColor: "#007bff",
+          color: "white",
+          padding: "10px 20px",
+          border: "none",
+          borderRadius: "5px",
+          cursor: "pointer"
+        }}>
+          Pesan Tiket
+        </button>
+      </form>
+    );
+  }
+
+  </script>
+
+</body>
+</html>
